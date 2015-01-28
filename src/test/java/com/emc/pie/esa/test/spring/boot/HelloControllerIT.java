@@ -1,4 +1,4 @@
-package com.emc.pie.esa.test.spring.boot.test;
+package com.emc.pie.esa.test.spring.boot;
 
 import java.net.URL;
 

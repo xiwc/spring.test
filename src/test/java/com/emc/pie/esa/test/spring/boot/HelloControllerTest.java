@@ -1,4 +1,4 @@
-package com.emc.pie.esa.test.spring.boot.test;
+package com.emc.pie.esa.test.spring.boot;
 
 import org.hamcrest.Matchers;
 import org.junit.Before;
