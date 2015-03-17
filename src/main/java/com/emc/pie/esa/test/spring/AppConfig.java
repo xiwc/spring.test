@@ -1,4 +1,4 @@
-package com.emc.pie.esa.test.spring.boot;
+package com.emc.pie.esa.test.spring;
 
 import java.util.Date;
 
@@ -12,11 +12,10 @@ import org.springframework.context.annotation.PropertySource;
 @EnableAutoConfiguration
 @ComponentScan
 @PropertySource(value = "classpath:application.properties")
-public class AppConfig
-{
+public class AppConfig {
+
 	@Bean
-	Date date()
-	{
+	Date date() {
 		return new Date();
 	}
 }
