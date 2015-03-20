@@ -1,4 +1,4 @@
-package com.emc.pie.esa.test.spring.boot;
+package com.emc.pie.esa.test.spring;
 
 import java.util.Date;
 
@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController
-{
+public class HelloController {
 
 	@Autowired
 	Environment env;
@@ -18,8 +17,7 @@ public class HelloController
 	Date date;
 
 	@RequestMapping("/")
-	public String index()
-	{
+	public String index() {
 		System.out.println(date.toString());
 
 		System.out.println(env.getProperty("endpoints.shutdown.enabled"));

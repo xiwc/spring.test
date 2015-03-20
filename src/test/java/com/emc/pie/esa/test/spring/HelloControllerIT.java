@@ -1,4 +1,4 @@
-package com.emc.pie.esa.test.spring.boot;
+package com.emc.pie.esa.test.spring;
 
 import java.net.URL;
 
@@ -16,14 +16,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
-import com.emc.pie.esa.test.spring.boot.Application;
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = AppConfig.class)
 @WebAppConfiguration
 @IntegrationTest({ "server.port=0" })
-public class HelloControllerIT
-{
+public class HelloControllerIT {
+
 	@Value("${local.server.port}")
 	int port;
 
@@ -31,19 +29,15 @@ public class HelloControllerIT
 	RestTemplate template;
 
 	@Before
-	public void setUp() throws Exception
-	{
+	public void setUp() throws Exception {
 		this.base = new URL("http://localhost:" + port + "/");
 		template = new TestRestTemplate();
 	}
 
 	@Test
-	public void getHello() throws Exception
-	{
-		ResponseEntity<String> response = template.getForEntity(
-				base.toString(), String.class);
+	public void getHello() throws Exception {
+		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 
-		Assert.assertThat(response.getBody(),
-				Matchers.is("Greetings from spring boot!"));
+		Assert.assertThat(response.getBody(), Matchers.is("Greetings from spring boot!"));
 	}
 }
