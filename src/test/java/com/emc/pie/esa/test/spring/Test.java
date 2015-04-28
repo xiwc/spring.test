@@ -11,7 +11,7 @@ public class Test {
 
 	public void readFileFromClassPath() throws IOException {
 
-		URL resource = Test.class.getResource("/spring.beans.properties");
+		URL resource = Test.class.getResource("/application-beans.properties");
 
 		System.out.println(resource.toString());
 

@@ -14,10 +14,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-// @SpringApplicationConfiguration(classes = { AppConfig.class })
-@ContextConfiguration(classes = { AppConfig.class })
+@ContextConfiguration(classes = { Application.class })
 @WebAppConfiguration
-@TestPropertySource("/spring.beans.properties")
+@TestPropertySource("/application-beans.properties")
 public class SpringWebAppContextTest {
 
 	static Logger logger = Logger.getLogger(SpringWebAppContextTest.class);
